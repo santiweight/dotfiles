@@ -1,8 +1,6 @@
 # -*- mode: gitignore; -*-
 *~
 \#*\#
-/.emacs.desktop
-/.emacs.desktop.lock
 *.elc
 auto-save-list
 tramp
@@ -10,7 +8,7 @@ tramp
 
 # Org-mode
 .org-id-locations
-*_archive
+#*_archive
 
 # flymake-mode
 *_flymake.*

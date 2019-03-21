@@ -12,4 +12,33 @@ function cd {
     }
 function dc {
     builtin cd "$@"
-    }
+}
+
+## navigation optimizations ##
+alias ..='cd ..'
+alias ...='cd ...'
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    ## Colorize the ls output ##
+    alias OS='darwin'
+    alias ls='ls -G'
+    alias lsa='ls -a'
+    alias lsal='ls -la'
+    alias ll='ls -la'
+    alias l.='ls -d .* -G'
+elif [[ "$OSTYPE" == "win32" ]]; then
+    alias ls='ls --color=auto'
+    alias lsa='ls -a'
+    alias lsl='ls -l'
+    alias lsal='ls -al'
+    alias ll='ls -al'
+    alias l.='ls -d .* --color=auto'
+fi
+    
+alias apt-get='sudo apt-get'
+alias update='sudo apt-get update && sudo apt-get upgrade'
+alias .emacs='~/dotfiles/.emacs.d/init.el'
+alias c='clear'
+
+export PATH="/usr/local/sbin:$PATH"
+export TERM=xterm-256color
