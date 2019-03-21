@@ -167,3 +167,8 @@ There are two things you can do about this warning:
       auto-save-interval 200            ; number of keystrokes between auto-saves (default: 300)
       vc-make-backup-files t
       )
+
+;; add a customization file
+(defvar --custom-file-path (concat user-emacs-directory "/custom.el"))
+(setq custom-file --custom-file-path)
+(load custom-file)
