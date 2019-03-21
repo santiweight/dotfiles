@@ -4,7 +4,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(comint-input-autoexpand (quote history))
- '(org-agenda-files (quote ("~/Documents/Film-Ideas.org")))
+ '(org-agenda-files
+   (quote
+    ("~/Documents/Film-Ideas.org" "~/Documents/Expenses.org" "~/Documents/TODO.org")))
  '(package-selected-packages
    (quote
     (exec-path-from-shell gotest buffer-move anaconda-mode company linum-relative mines undo-tree))))
