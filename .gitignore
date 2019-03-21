@@ -47,3 +47,4 @@ flycheck_*.el
 
 /.bash_sessions
 /.bash_history
+/.emacs.d/elpa

@@ -1,6 +1,19 @@
 ;; -*- mode: elisp -*-
 
-;; Define  is-a-mac bool if  this is a  mac
+(require 'package)
+(defun require-package (package &optional min-version no-refresh)
+  "Install given PACKAGE, optionally requiring MIN-VERSION.
+If NO-REFRESH is non-nil, the available package lists will not be
+re-downloaded in order to locate PACKAGE."
+  (if (package-installed-p package min-version)
+      t
+    (if (or (assoc package package-archive-contents) no-refresh)
+        (package-install package)
+      (progn
+        (package-refresh-contents)
+        (require-package package min-version t)))))
+
+;; Define is-a-mac bool if this is a mac
 (defconst *is-a-mac* (eq system-type 'darwin))
 
 ;; Inherit shell path
@@ -8,7 +21,7 @@
     (add-hook 'after-init-hook 'exec-path-from-shell-initialize))
 
 ;; Disable the splash screen (to enable it agin, replace the t with 0)
-(require 'package)
+
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
                     (not (gnutls-available-p))))
        (proto (if no-ssl "http" "https")))
@@ -39,14 +52,14 @@ There are two things you can do about this warning:
 
 ;;;;Org mode configuration
 ;; Enable Org mode
-(require 'org)
+(require-package 'org)
 ;; Make Org mode work with files ending in .org
 ;; (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 ;; The above is the default in recent emacsen
 
 ;; Evil mode configuration
 (add-to-list 'load-path "~/.emacs.d/evil")
-(require 'evil)
+(require-package 'evil)
 (evil-mode 1)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -63,9 +76,9 @@ There are two things you can do about this warning:
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(comint-highlight-prompt ((t (:inherit (## calendar-weekday-header))))))
+ )
 
-(require 'undo-tree)
+(require-package 'undo-tree)
 
 
 
@@ -101,17 +114,15 @@ There are two things you can do about this warning:
 
 (global-linum-relative-mode 1)
 
+;; Make company autocomplete global
 (add-hook 'after-init-hook 'global-company-mode)
 
-;; Move auto-saves to auto-save folder  (declutter)
-(setq auto-save-file-name-transforms
-          `((".*" ,(concat user-emacs-directory "auto-save/") t)))
-
 ;; Make all python buffers use anaconda mode
+(require-package 'anaconda-mode)
 (add-hook 'python-mode-hook 'anaconda-mode)
 
 ;; buffer-move allows buffers to be switched around
-(require 'buffer-move)
+(require-package 'buffer-move)
 (global-set-key (kbd "<C-M-up>")     'buf-move-up)
 (global-set-key (kbd "<C-M-down>")   'buf-move-down)
 (global-set-key (kbd "<C-M-left>")   'buf-move-left)
@@ -138,3 +149,21 @@ There are two things you can do about this warning:
 (if (boundp 'buffer-file-coding-system)
     (setq-default buffer-file-coding-system 'utf-8)
 (setq default-buffer-file-coding-system 'utf-8))
+
+;; moving autosaves
+(defvar --backup-directory (concat user-emacs-directory "gen/auto-save/"))
+(if (not (file-exists-p --backup-directory))
+        (make-directory --backup-directory t))
+(setq backup-directory-alist `(("." . ,--backup-directory)))
+(setq make-backup-files t               ; backup of a file the first time it is saved.
+      backup-by-copying t               ; don't clobber symlinks
+      version-control t                 ; version numbers for backup files
+      delete-old-versions t             ; delete excess backup files silently
+      delete-by-moving-to-trash t
+      kept-old-versions 6               ; oldest versions to keep when a new numbered backup is made (default: 2)
+      kept-new-versions 9               ; newest versions to keep when a new numbered backup is made (default: 2)
+      auto-save-default t               ; auto-save every buffer that visits a file
+      auto-save-timeout 20              ; number of seconds idle time before auto-save (default: 30)
+      auto-save-interval 200            ; number of keystrokes between auto-saves (default: 300)
+      vc-make-backup-files t
+      )

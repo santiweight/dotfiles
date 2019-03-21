@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "buffer-move" "buffer-move.el" (0 0 0 0))
-;;; Generated autoloads from buffer-move.el
+;;;### (autoloads nil "buffer-move" "../../../../.emacs.d/elpa/buffer-move-20160615.1803/buffer-move.el"
+;;;;;;  "533b7704a31bffcf5e30415dd41b2755")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/buffer-move-20160615.1803/buffer-move.el
 
 (autoload 'buf-move-up "buffer-move" "\
 Swap the current buffer and the buffer above the split.
@@ -44,8 +45,21 @@ Use the arrow keys to move in the desired direction.  Pressing
 any other key exits this function.
 
 \(fn)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "buffer-move"
+;;;;;;  "../../../../.emacs.d/elpa/buffer-move-20160615.1803/buffer-move.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/buffer-move-20160615.1803/buffer-move.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "buffer-move" '("buf")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/buffer-move-20160615.1803/buffer-move-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/buffer-move-20160615.1803/buffer-move.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 
