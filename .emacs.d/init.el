@@ -50,12 +50,69 @@ There are two things you can do about this warning:
 ;; Enable transient mark mode
 (transient-mark-mode 1)
 
+(require-package 'evil-leader)
+(global-evil-leader-mode)
+(evil-leader/set-leader ",")
+(evil-leader/set-key "f" 'find-file)
+(evil-leader/set-key "o" '(lambda() (interactive)(find-file "~/Documents/org/")))
+(evil-leader/set-key "i" '(lambda() (interactive)(find-file "~/dotfiles/.emacs.d/init.el")))
+
+
+(require-package 'bind-key)
+(defun files-in-below-directory (directory)
+       "List the .el files in DIRECTORY and in its sub-directories."
+       ;; Although the function will be used non-interactively,
+       ;; it will be easier to test if we make it interactive.
+       ;; The directory will have a name such as
+       ;;  "/usr/local/share/emacs/22.1.1/lisp/"
+       (interactive "DDirectory name: ")
+       (let (el-files-list
+             (current-directory-list
+              (directory-files-and-attributes directory t)))
+         ;; while we are in the current directory
+         (while current-directory-list
+           (cond
+            ;; check to see whether filename ends in '.el'
+            ;; and if so, add its name to a list.
+            ((equal ".org" (substring (car (car current-directory-list)) -3))
+             (setq el-files-list
+                   (cons (car (car current-directory-list)) el-files-list)))
+            ;; check whether filename is that of a directory
+            ((eq t (car (cdr (car current-directory-list))))
+             ;; decide whether to skip or recurse
+             (if
+                 (equal "."
+                        (substring (car (car current-directory-list)) -1))
+                 ;; then do nothing since filename is that of
+                 ;;   current directory or parent, "." or ".."
+                 ()
+               ;; else descend into the directory and repeat the process
+               (setq el-files-list
+                     (append
+                      (files-in-below-directory
+                       (car (car current-directory-list)))
+                      el-files-list)))))
+           ;; move to the next filename in the list; this also
+           ;; shortens the list so the while loop eventually comes to an end
+           (setq current-directory-list (cdr current-directory-list)))
+         ;; return the filenames
+         el-files-list))
+
 ;;;;Org mode configuration
 ;; Enable Org mode
 (require-package 'org)
 ;; Make Org mode work with files ending in .org
-;; (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 ;; The above is the default in recent emacsen
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+(setq org-agenda-files (list "~/Documents/org/Expenses.org"
+			     "~/Documents/org/Film-Ideas.org"
+			     "~/Documents/org/TODO.org"))
+
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
 ;; Evil mode configuration
 (add-to-list 'load-path "~/.emacs.d/evil")
@@ -169,6 +226,43 @@ There are two things you can do about this warning:
       )
 
 ;; add a customization file
-(defvar --custom-file-path (concat user-emacs-directory "/custom.el"))
+(defvar --custom-file-path (concat user-emacs-directory "custom.el"))
 (setq custom-file --custom-file-path)
 (load custom-file)
+
+
+(setq calendar-week-start-day 1)
+
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "VERIFY(v)" "WAITING(w)" "|" "DONE(d)")
+	(sequence "Lecture(l)" "|" "Attended(a)" "Canceled(x)")))
+
+
+(setq tramp-default-method "ssh")
+
+
+(setq max-specpdl-size 1000)  ; default is 1000, reduce the backtrace level
+(setq debug-on-error t)
+
+(setq org-modules '(org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m org-eshell org-toc))
+
+(bind-key "C-c i" #'(lambda() (interactive)(find-file "~/dotfiles/.emacs.d/init.el")))
+(bind-key "C-c o" #'(lambda() (interactive)(find-file "~/Documents/org/")))
+
+(bind-key "<s-up>" #'previous-buffer)
+(bind-key "<s-down>" #'next-buffer)
+
+(bind-key "s-/" #'company-complete)
+
+(add-hook 'org-mode-hook 
+          (lambda ()
+            (local-set-key "\M-n" 'outline-next-visible-heading)
+            (local-set-key "\M-p" 'outline-previous-visible-heading)
+            ;; table
+            (local-set-key "\C-\M-w" 'org-table-copy-region)
+            (local-set-key "\C-\M-y" 'org-table-paste-rectangle)
+            (local-set-key "\C-\M-l" 'org-table-sort-lines)
+            ;; display images
+            (local-set-key "\M-I" 'org-toggle-iimage-in-org)
+            ;; fix tab
+            (local-set-key "\C-b" 'org-next-visible-heading)))

@@ -1,0 +1,6 @@
+ls
+cd ../cs131/
+ls
+cd ..
+ls
+umount cs131

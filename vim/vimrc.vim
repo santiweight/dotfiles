@@ -1,17 +1,61 @@
-" General Vim settings
-	syntax on
+"PLUGINS
+set nocompatible
+filetype off
+set rtp+=~/dotfiles/vim/bundle/Vundle.vim
+
+call vundle#begin()
+
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
+Plugin 'w0rp/ale'
+Plugin 'tpope/vim-commentary'
+Plugin 'itchyny/lightline.vim'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'wellle/targets.vim'
+Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'valloric/youcompleteme'
+
+" Add plugins before this line
+call vundle#end()
+filetype plugin indent on
+
+
+" Header commands
 	let mapleader=","
+
+" Tab settings
 	set autoindent
 	set tabstop=4
 	set shiftwidth=4
 	set expandtab
-	set dir=/tmp/
-	set relativenumber 
+    set smarttab
+
+" Presentation settings
+    set textwidth=80
+
+	syntax on
+    set colorcolumn+=80
+    highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+    set dir=/tmp/
 	set number
+
+    set autochdir
+	set laststatus=2
     set showcmd
 
-	set statusline=current:\ %F
-	set laststatus=2
+" Autocomplete file opening
+    set path+=**
+    set wildmenu
+    set wildmode=longest:full,full
+
+" Tag jumping
+    command! MakeTags !ctags -R .
+
+    set complete+=k
 
 	autocmd Filetype html setlocal sw=2 expandtab
 	autocmd Filetype javascript setlocal sw=4 expandtab
@@ -20,42 +64,47 @@
 	hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
 
 	set hlsearch
-	nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
-	"nnoremap <C-c> :set norelativenumber<CR>:set nonumber<CR>:echo "Line numbers turned off."<CR>
-	nnoremap <C-n> :set relativenumber<CR>:set number<CR>:echo "Line numbers turned on."<CR>
+    hi Search ctermbg=LightYellow
+    hi Search ctermfg=Red
+
+    nnoremap <silent> <esc><esc> <esc>:nohlsearch<CR><esc>
+    nnoremap <C-n> :NERDTreeToggle<CR>
+
+   func! WordProcessor()
+        map j gj
+        map k gk
+        setlocal textwidth=80
+
+        setlocal formatoptions=1
+        setlocal noexpandtab
+        setlocal wrap
+        setlocal linebreak
+        setlocal nonumber
+        setlocal spell spelllang=en_us
+    endfunction
 
 	nnoremap n nzzzv
 	nnoremap N Nzzzv
+    autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
 
     nnoremap <C-l> }
     nnoremap <C-h> {
-    inoremap <C-l> <esc>}i
-    inoremap <C-h> <esc>{i
     vnoremap <C-l> }
     vnoremap <C-h> {
-    nnoremap j gj
-    nnoremap k gk
-	nnoremap 0 0
-	nnoremap H 0w
+
+	nnoremap H ^
 	nnoremap L $
-	vnoremap H 0w
+	vnoremap H ^
 	vnoremap L $
-	nnoremap J 10j
-	nnoremap K 10k
-	vnoremap J 10j
-	vnoremap K 10k
 
 	set backspace=indent,eol,start
-    set pastetoggle=<F2>
-
+    set pastetoggle=<C-p>
 
 	nnoremap <Space> za
 	nnoremap <leader>zz zf}
 
-	nnoremap vv 0v$
-
-	set listchars=tab:\|\ 
-	nnoremap <leader><tab> :set list!<cr>
+	nnoremap vv 0v
+	nnoremap <leader>l :set list!<cr>
 	set mouse=a
 	set incsearch
 
@@ -63,38 +112,15 @@
 	" Tabs
 		so ~/dotfiles/vim/tabs.vim
 
-" Implementing brace matching commands
-    let g:brace_dict = {
-        \ "(" : ")",
-        \ "[" : "]",
-        \ "{" : "}",
-        \ "<" : ">",
-        \ "\"" : "\"",
-        \ "\'" : "\'"
-    \}
-
-    for [key, val] in items(brace_dict)
-		exe "nnoremap <leader>".val." :<c-u>let n=v:count1<CR>bea".val."<esc>:exe 'normal'.n.'B'<CR>i".key."<esc>%"
-		exe "nnoremap <leader>".key." :<c-u>let n=v:count1<CR>wbi".key."<esc>:exe 'normal'.n.'E'<CR>a".val."<esc>%"
-		exe "nnoremap <leader>.".val." :<c-u>let n=v:count1<CR>a".val."<esc>:exe 'normal'.n.'B'<CR>i".key."<esc>%"
-		exe "nnoremap <leader>.".key." :<c-u>let n=v:count1<CR>i".key."<esc>:exe 'normal'.n.'E'<CR>a".val."<esc>%"
-		exe "inoremap <leader>".val." <esc>:<c-u>let n=v:count1<CR>bea".val."<esc>:exe 'normal'.n.'B'<CR>i".key."<esc>%"
-		exe "inoremap <leader>".key." <esc>:<c-u>let n=v:count1<CR>wbi".key."<esc>:exe 'normal'.n.'E'<CR>a".val."<esc>%"
-		exe "inoremap <leader>.".val." <esc>l:<c-u>let n=v:count1<CR>a".val."<esc>:exe 'normal'.n.'B'<CR>i".key."<esc>%"
-		exe "inoremap <leader>.".key." <esc>l:<c-u>let n=v:count1<CR>i".key."<esc>:exe 'normal'.n.'E'<CR>a".val."<esc>%"
-    endfor
-    nmap ) <leader>)
-    nmap ( <leader>(
-    nmap " <leader>"
-    nmap ' <leader>'
-    nmap [ <leader>[
-    nmap ] <leader>]
-
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+ 
 " this is a piece of tester text for parenthesising function
 	" General
-		inoremap <leader>for <esc>Ifor (int i = 0; i < <esc>A; i++) {<enter>}<esc>O<tab>
-		inoremap <leader>pfor <esc>Ifor i in range(0, <esc>A):  <enter><esc>O<tab>
-		inoremap <leader>if <esc>Iif (<esc>A) {<enter>}<esc>O<tab>
+		" inoremap <leader>for <esc>Ifor (int i = 0; i < <esc>A; i++) {<enter>}<esc>O<tab>
+		" inoremap <leader>pfor <esc>Ifor i in range(0, <esc>A):  <enter><esc>O<tab>
+		" inoremap <leader>if <esc>Iif (<esc>A) {<enter>}<esc>O<tab>
     
 	" Java
 	"   inoremap <leader>sys <esc>ISystem.out.println(<esc>A);
@@ -123,28 +149,35 @@
 " File and Window Management 
 	inoremap <leader>w <Esc>:w<CR>
 	nnoremap <leader>w :w<CR>
-
-	nmap cL c$
-	nmap yL y$
-	nmap dL d$
-
-	inoremap <leader>q <ESC>:q<CR>
 	nnoremap <leader>q :q<CR>
-	inoremap <leader>.q <ESC>:wq<CR>
-	nnoremap <leader>.q :wq<CR>
-
-	inoremap <leader>x <ESC>:x<CR>
 	nnoremap <leader>x :x<CR>
 
-	nnoremap <leader>so :mapc<CR>:w<CR>:so $MYVIMRC<CR>
-	nnoremap <leader>rel :edit!<CR>
-    nnoremap <leader>t :tabnew<CR>:Ex<CR>
+    nnoremap <D-y> y$
+
+	nnoremap <leader>rso :mapc<CR>:w<CR>:so $MYVIMRC<CR>
+	nnoremap <leader>r. :edit!<CR>
+    " nnoremap <leader>t :tabnew<CR>:Ex<CR>
 	nnoremap <leader>v :vsplit<CR>:w<CR>:Ex<CR>
 	nnoremap <leader>s :split<CR>:w<CR>:Ex<CR>
     nnoremap <leader>cw <C-w><C-c>
+    
+    "Mode Settings
 
-    nmap <leader><tab> <C-w><C-w>
-    nmap <C-tab> <C-w><C-w>
+    let &t_SI.="\e[5 q" "SI = INSERT mode
+    let &t_SR.="\e[4 q" "SR = REPLACE mode
+    let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+
+    "Cursor settings:
+
+    "  1 -> blinking block
+    "  2 -> solid block 
+    "  3 -> blinking underscore
+    "  4 -> solid underscore
+    "  5 -> blinking vertical bar
+    "  6 -> solid vertical bar
+    "
+    nnoremap <tab> <C-w><C-w>
+    vnoremap <tab> <C-w><C-w>
 
 " Return to the same line you left off at
 	augroup line_return
@@ -153,7 +186,7 @@
 			\ if line("'\"") > 0 && line("'\"") <= line("$") |
 			\	execute 'normal! g`"zvzz' |
 			\ endif
-	augroup END
+    augroup END
 
 " Auto load
 	" Triger `autoread` when files changes on disk
@@ -169,6 +202,28 @@
 " Future stuff
 	"Swap line
 	"Insert blank below and above
-    nnoremap <C-j> :m .+1<CR>==
-	nnoremap <C-k> :m .-2<CR>==
+    vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 
+	nnoremap <m-k> :m .-2<CR>==
+    nnoremap <m-j> :m .+1<CR>==
+
+    nmap <m-p> <Plug>yankstack_substitute_older_paste
+    nmap <m-P> <Plug>yankstack_substitute_newer_paste
+     
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+    if has("gui_macvim")
+        set macmeta
+        nmap π <m-p>
+        nmap ∏ <m-P>
+        nmap ˚ <m-k>
+        nmap ∆ <m-j>
+        nmap ˜ <m-n>
+        nmap ø <m-o>
+        nmap œ <m-q>
+    endif
+
+    nnoremap <leader><tab> :tabnext<CR>
+    nnoremap <leader>tp :tabprevious<CR>
+    nnoremap <leader>tn :tabnew<CR>
+    nnoremap <leader>tq :tabclose<CR>
