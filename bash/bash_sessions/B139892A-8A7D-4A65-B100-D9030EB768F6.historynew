@@ -1,0 +1,11 @@
+./mknuth.sh 
+./mknuth.sh 
+cd  cs131/
+ls
+ls
+cd ..
+./mknuth.sh 
+ls cs131/
+cd  cs131/
+cd  sweight
+ls

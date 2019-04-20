@@ -1,0 +1,507 @@
+ls
+cd lab3/
+ls
+cd lc1
+ls
+cd ../../
+ls
+cd ..
+ls
+cd sweight-wli/
+ls
+cd lab4/
+ls
+./figure.ps
+cd rlinden-sweight/hw4
+ls
+vim PicLexer.hs 
+cd ~
+./knuth.sh 
+brew install emacs
+emacs
+emacs
+vim golf
+vimgolf
+brew install vimgolf
+brew install gem
+brew install ruby
+gem install vimgolf
+sudo gem install vimgolf
+vimgolf
+vimgolf local
+vimgolf setup
+vimgolf
+vimgolf put 55b18bbea9c2c30d04000001
+tmux ls
+ls
+git clone https://github.com/Parth/dotfiles
+ls
+cd dotfiles/
+ls
+./deplot
+./deploy
+./deploy
+./deploy
+ls
+cd dotfiles/
+ls
+./deploy
+vim
+vim -u ./vim/vimrc.vim 
+slakdfjlksdfjk
+vim
+sed  -n l
+fg
+sed  -n l
+fg
+fg
+cd dotfiles/ivm
+cd dotfiles/vim
+ls
+vim vimrc.vim 
+vim vimrc.vim 
+vim vimrc.vim 
+vim vimrc.vim 
+vim vimrc.vim 
+vim vimrc.vim 
+vim vimrc.vim 
+vim vimrc.vim 
+vim ~/.bashrc
+vim ~/.profile
+cd dotfiles/vim/
+vim vimrc.vim 
+vim vimrc.vim 
+/Users/santi/Downloads/ghostscript-9.26-linux-x86_64/gs-926-linux-x86_64 ; exit;
+/Users/santi/Downloads/ghostscript-9.26-linux-x86_64/gs-926-linux-x86_64 ; exit;
+cd ../../Downloads/
+ls
+cd MacGhostView524.dmg 
+cd gv-3.7.4
+ls
+make
+make INSTALL
+./install-sh 
+cat install-sh 
+ls
+make Makefile.am
+make Makefile.in
+cat README
+./install-sh 
+ls -al
+vim ParserBase.hs 
+cd ../../../dotfiles/tmux/
+ls
+vim tmux-keybindings.conf 
+vim SimpleExpr.hs 
+vim Absyn.hs 
+cd ../../../dotfiles/tmux/
+ls
+cat tmux-keybindings.conf 
+cabal update
+cabal update install hspec
+cabal new-update 
+cabal-install hpsec 
+cabal-install hspec 
+cabal new-install hspec 
+cabal --lib new-install hspec 
+ls
+cd ..
+cd ~/
+./mknuth.sh 
+diskutil unmount
+diskutil unmount -f
+diskutil unmount cs131
+diskutil ls
+diskutil
+diskutil list
+diskutil list
+diskutil
+./mknuth.sh 
+ls
+ls cs131/
+ls
+cd  cs131/sweight/hw5
+ls
+tmux ls
+tmux
+tmux ls
+ls
+./mknuth.sh 
+./mknuth.sh 
+ls
+.
+ls
+ls
+ls
+ls
+ls
+ls
+vim ParserCombinators.hs 
+tmux
+tmux ls
+tmux a -t 0
+ls
+./m
+./mknuth.sh 
+./mknuth.sh 
+./mknuth.sh 
+vim PicParser.hs 
+ls
+ls
+vim Absyn.hs 
+vim SimpleExpr.hs 
+ls
+ls
+ls test
+mv test/ExprEvalSpec.hs .
+ghci ExprEvalSpec.hs 
+ls
+cd hw5
+vim PicParser.hs 
+vim PicEvaluation.hs 
+ls
+./mknuth.sh 
+cd cs131
+ls
+cd sweight
+ls
+cd hw5
+ls
+ghci PicParser.hs 
+cd hw5
+cs test
+ls
+cd test
+ls
+cat ParserSpec.hs 
+ghci  ParserSpec.hs 
+ghci ../PicParser.hs 
+mv ParserSpec.hs ..
+cd ..
+ghci ParserSpec.hs 
+ghci ParserSpec.hs 
+ghci PicEvaluation.hs 
+vim PicParser.hs 
+ls
+ls
+vim Absyn.hs 
+vim SimpleExpr.hs 
+ls
+ls
+ls test
+mv test/ExprEvalSpec.hs .
+ghci ExprEvalSpec.hs 
+ls
+cd hw5
+vim PicParser.hs 
+vim PicEvaluation.hs 
+ls
+./mknuth.sh 
+cd cs131
+ls
+cd sweight
+ls
+cd hw5
+ls
+ghci PicParser.hs 
+cd hw5
+cs test
+ls
+cd test
+ls
+cat ParserSpec.hs 
+ghci  ParserSpec.hs 
+ghci ../PicParser.hs 
+mv ParserSpec.hs ..
+cd ..
+ghci ParserSpec.hs 
+ghci ParserSpec.hs 
+ghci PicEvaluation.hs 
+vim PicParser.hs 
+ls
+ls
+vim Absyn.hs 
+vim SimpleExpr.hs 
+ls
+ls
+ls test
+mv test/ExprEvalSpec.hs .
+ghci ExprEvalSpec.hs 
+ls
+cd hw5
+vim PicParser.hs 
+vim PicEvaluation.hs 
+ls
+./mknuth.sh 
+cd cs131
+ls
+cd sweight
+ls
+cd hw5
+ls
+ghci PicParser.hs 
+cd hw5
+cs test
+ls
+cd test
+ls
+cat ParserSpec.hs 
+ghci  ParserSpec.hs 
+ghci ../PicParser.hs 
+mv ParserSpec.hs ..
+cd ..
+ghci ParserSpec.hs 
+ghci ParserSpec.hs 
+ghci PicEvaluation.hs 
+vim PicParser.hs 
+ls
+ls
+vim Absyn.hs 
+vim SimpleExpr.hs 
+ls
+ls
+ls test
+mv test/ExprEvalSpec.hs .
+ghci ExprEvalSpec.hs 
+ls
+cd hw5
+vim PicParser.hs 
+vim PicEvaluation.hs 
+ls
+./mknuth.sh 
+cd cs131
+ls
+cd sweight
+ls
+cd hw5
+ls
+ghci PicParser.hs 
+cd hw5
+cs test
+ls
+cd test
+ls
+cat ParserSpec.hs 
+ghci  ParserSpec.hs 
+ghci ../PicParser.hs 
+mv ParserSpec.hs ..
+cd ..
+ghci ParserSpec.hs 
+ghci ParserSpec.hs 
+ghci PicEvaluation.hs 
+vim PicParser.hs 
+ls
+ls
+vim Absyn.hs 
+vim SimpleExpr.hs 
+ls
+ls
+ls test
+mv test/ExprEvalSpec.hs .
+ghci ExprEvalSpec.hs 
+ls
+cd hw5
+vim PicParser.hs 
+vim PicEvaluation.hs 
+ls
+./mknuth.sh 
+cd cs131
+ls
+cd sweight
+ls
+cd hw5
+ls
+ghci PicParser.hs 
+cd hw5
+cs test
+ls
+cd test
+ls
+cat ParserSpec.hs 
+ghci  ParserSpec.hs 
+ghci ../PicParser.hs 
+mv ParserSpec.hs ..
+cd ..
+ghci ParserSpec.hs 
+ghci ParserSpec.hs 
+ghci PicEvaluation.hs 
+vim PicEvaluation.hs 
+ls
+ghci ExprEvalSpec.hs 
+ghci ParserSpec.hs 
+ls test
+mv test/NewElemsSpec.hs 
+mv test/NewElemsSpec.hs .
+ghci NewElemsSpec.hs 
+vim Absyn.hs 
+ls
+vim Absyn.hs 
+ld
+ls
+./mknuth.sh 
+ls cs131/
+cd cs131/sweight/
+ls
+cd  hw5
+ls
+tmux
+tmux ls
+cd ..
+cd ..
+cd ..
+umount cs131
+ls cs131/
+cabal install hspec-discover
+cabal-install hspec-discover
+cabal new-install hspec-discover
+vim ~/.profile
+vim ~/.bashrc
+echo $PATH
+source ~/.bash
+source ~/.bashrc
+echo #
+echo $PATH
+vim ~/.bashrc
+gv test4.ps
+ls
+ls ~/
+ls -al ~/
+touch ~/.bash_profile
+vim ~/.bash_profile 
+soure ~/.bash_profile 
+source ~/.bash_profile 
+echo $PATH
+vim ~/.bash_profile 
+cd /Users/santi/Library/Haskell/bin
+cd /Users/santi/Library/
+ls
+ls ..
+ls Developer/
+cd ../cs131/sweight
+ls
+cd hw5
+ls
+svn commit -m "about to test"
+vim pic2ps.hs 
+cd ../../../
+./knuth.sh 
+vim  test4.ps
+cd cs131/sweight
+cd hw5
+vim test4.ps
+vim PicEvaluation.hs 
+open test4.ps
+open test3.ps
+vim PicParser.hs 
+ghci pic2ps.hs 
+vimvim Absyn.hs 
+vim Absyn.hs 
+echo $PATH
+cabal new-install generics
+cabal new-install Generics
+cabal new-install generics-deriving
+cabal new-install Generics
+cabal new-install Generic
+cabal new-install generics
+cabal new-install generics
+cabal new-install qualified
+ls test
+ls
+ghci ExprEvalSpec.hs 
+ls
+ghci NewElemsSpec.hs 
+cat pic2ps.hs 
+vim pic2ps.hs 
+ghci NewElemsSpec.hs 
+vim PicEvaluation.hs 
+vim PicEvaluation.hs 
+cd ../../..
+./knuth.sh 
+ls
+ls
+ghci ParserSpec.hs 
+ghci ExprEvalSpec.hs 
+ghci NewElemsSpec.hs 
+mv test/ASTSpec.hs .
+mv test/Spec.hs .
+ghci Spec.hs 
+ghci Spec.hs 
+source ~/.bash_profile 
+ghci Spec.hs 
+ghci ASTSpec.hs 
+ghci NewElemsSpec.hs 
+ghci NewElemsSpec.hs 
+ghci NewElemsSpec.hs :r
+ghci NewElemsSpec.hs :r
+ghci NewElemsSpec.hs
+ghci NewElemsSpec.hs
+ghci NewElemsSpec.hs
+ghci ParserSpec.hs 
+ghci pic2ps.hs 
+vim *.ps
+vim *.pic
+cat test1.pic
+cat test5.pic
+cat test5.ps
+cat test5.ps
+cat test4.ps
+cat test5.pic
+cat test4.pic
+cat test4.pic
+cat test4.ps
+cat test3.ps
+cat test3.ps
+gv test3.ps
+ls
+rm hi
+cat test3.pic
+box "Abc" "Def" "Ghi";
+arrow right down;
+box "Jkl" "Mno";
+move down left;
+box "pqr" "stu";
+arrow left up;
+circle "Vwx" "Yz";
+vim ParserSpec.hs 
+cat test4.ps
+stat -c %y "test4.ps
+"
+stat %y "test4.ps
+"
+stat %y "test4.ps"
+stat -c%y "test4.ps"
+stat -c %y "test4.ps"
+stat  %y "test4.ps"
+cat test4.ps
+ghci NewElemsSpec.hs 
+vim PicEvaluation.hs 
+cd cs131/sweight
+ls
+cd hw5
+ls
+vim PicEvaluation.hs 
+ls
+./mknuth.sh 
+ls
+cd cs131/sweight
+ls
+cd h5
+cd hw5
+tmux
+svn commit -m "final commits"
+svn status
+svn add .
+svn add *
+svn uodate
+svn update
+svn staus
+svn status
+ls
+svn commit -m "final commit"
+cd cs131/sweight
+cd hw5
+ls
+svn status
+svn commit -m "final commit"
+svn update
+svn status

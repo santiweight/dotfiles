@@ -1,0 +1,503 @@
+ls
+vim PostScript.hs 
+vim santis
+ls
+vim Absyn.hs 
+cd rlinden-sweight/hw4
+vim PicParse
+vim PicParser.hs 
+vim PicParser.hs 
+vim PostScript.hs 
+svn update
+vim PostScript.hs 
+ls
+cd ~/Downloads/
+ls
+ls
+cd ../Documents/cs131/cgivens-sweight/
+ls
+cd lab3/
+ls
+cd lc1
+ls
+cd ../../
+ls
+cd ..
+ls
+cd sweight-wli/
+ls
+cd lab4/
+ls
+./figure.ps
+cd rlinden-sweight/hw4
+ls
+vim PicLexer.hs 
+cd ~
+./knuth.sh 
+cd hw4
+svn commit -m "sharing code"
+cd hw4
+ls
+cd rlinden-sweight/hw4
+ls
+svn commit -m "sharing code"
+ls
+svn status
+svn add .
+svn add  santis 
+svn commit -m "sharing code"
+svn update
+svn status
+vim PostScript.hs 
+vim Absyn.hs 
+vim Coords.hs 
+ghci
+svn commit -m "sharing code"
+brew install gv
+brew install gv
+ls
+cd rlinden-sweight/hw4
+ls
+rm santis
+svn rm santis
+ls
+svn commit -m "fixing repo"
+svn update
+ls
+ls
+ls
+cat test.ps
+rm test.ps
+ls
+cat test
+ls test
+cat test/StateSpec.hs 
+vim test/StateSpec.hs 
+vim test/StateSpec.hs 
+vim PostScript.hs 
+cd hw4
+ls
+cd rlinden-sweight/hw4
+vim pic2ps.hs 
+ls
+cd ..
+sshfs sweight@knuth.cs.hmc.edu:courses/cs131 ./cs131
+cd cs131/
+ls
+cd rlinden-sweight/
+ls
+cd hw4
+ls
+vim PostScript.hs 
+vim santis
+ls
+vim Absyn.hs 
+cd rlinden-sweight/hw4
+vim PicParse
+vim PicParser.hs 
+vim PicParser.hs 
+vim PostScript.hs 
+svn update
+vim PostScript.hs 
+ls
+cd ~/Downloads/
+ls
+ls
+cd ../Documents/cs131/cgivens-sweight/
+ls
+cd lab3/
+ls
+cd lc1
+ls
+cd ../../
+ls
+cd ..
+ls
+cd sweight-wli/
+ls
+cd lab4/
+ls
+./figure.ps
+cd rlinden-sweight/hw4
+ls
+vim PicLexer.hs 
+cd ~
+./knuth.sh 
+cd hw4
+svn commit -m "sharing code"
+cd hw4
+ls
+cd rlinden-sweight/hw4
+ls
+svn commit -m "sharing code"
+ls
+svn status
+svn add .
+svn add  santis 
+svn commit -m "sharing code"
+svn update
+svn status
+vim PostScript.hs 
+vim Absyn.hs 
+vim Coords.hs 
+ghci
+svn commit -m "sharing code"
+brew install gv
+brew install gv
+ls
+cd rlinden-sweight/hw4
+ls
+rm santis
+svn rm santis
+ls
+svn commit -m "fixing repo"
+svn update
+ls
+ls
+ls
+cat test.ps
+rm test.ps
+ls
+cat test
+ls test
+cat test/StateSpec.hs 
+vim test/StateSpec.hs 
+vim test/StateSpec.hs 
+vim PostScript.hs 
+cd hw4
+ls
+cd rlinden-sweight/hw4
+vim pic2ps.hs 
+ls
+cd ..
+sshfs sweight@knuth.cs.hmc.edu:courses/cs131 ./cs131
+cd cs131/
+ls
+cd rlinden-sweight/
+ls
+cd hw4
+ls
+vim PostScript.hs 
+vim santis
+ls
+vim Absyn.hs 
+cd rlinden-sweight/hw4
+vim PicParse
+vim PicParser.hs 
+vim PicParser.hs 
+vim PostScript.hs 
+svn update
+vim PostScript.hs 
+ls
+cd ~/Downloads/
+ls
+ls
+cd ../Documents/cs131/cgivens-sweight/
+ls
+cd lab3/
+ls
+cd lc1
+ls
+cd ../../
+ls
+cd ..
+ls
+cd sweight-wli/
+ls
+cd lab4/
+ls
+./figure.ps
+cd rlinden-sweight/hw4
+ls
+vim PicLexer.hs 
+cd ~
+./knuth.sh 
+cd hw4
+svn commit -m "sharing code"
+cd hw4
+ls
+cd rlinden-sweight/hw4
+ls
+svn commit -m "sharing code"
+ls
+svn status
+svn add .
+svn add  santis 
+svn commit -m "sharing code"
+svn update
+svn status
+vim PostScript.hs 
+vim Absyn.hs 
+vim Coords.hs 
+ghci
+svn commit -m "sharing code"
+brew install gv
+brew install gv
+ls
+cd rlinden-sweight/hw4
+ls
+rm santis
+svn rm santis
+ls
+svn commit -m "fixing repo"
+svn update
+ls
+ls
+ls
+cat test.ps
+rm test.ps
+ls
+cat test
+ls test
+cat test/StateSpec.hs 
+vim test/StateSpec.hs 
+vim test/StateSpec.hs 
+vim PostScript.hs 
+cd hw4
+ls
+cd rlinden-sweight/hw4
+vim pic2ps.hs 
+ls
+cd ..
+sshfs sweight@knuth.cs.hmc.edu:courses/cs131 ./cs131
+cd cs131/
+ls
+cd rlinden-sweight/
+ls
+cd hw4
+ls
+vim PostScript.hs 
+vim santis
+ls
+vim Absyn.hs 
+cd rlinden-sweight/hw4
+vim PicParse
+vim PicParser.hs 
+vim PicParser.hs 
+vim PostScript.hs 
+svn update
+vim PostScript.hs 
+ls
+cd ~/Downloads/
+ls
+ls
+cd ../Documents/cs131/cgivens-sweight/
+ls
+cd lab3/
+ls
+cd lc1
+ls
+cd ../../
+ls
+cd ..
+ls
+cd sweight-wli/
+ls
+cd lab4/
+ls
+./figure.ps
+cd rlinden-sweight/hw4
+ls
+vim PicLexer.hs 
+cd ~
+./knuth.sh 
+cd hw4
+svn commit -m "sharing code"
+cd hw4
+ls
+cd rlinden-sweight/hw4
+ls
+svn commit -m "sharing code"
+ls
+svn status
+svn add .
+svn add  santis 
+svn commit -m "sharing code"
+svn update
+svn status
+vim PostScript.hs 
+vim Absyn.hs 
+vim Coords.hs 
+ghci
+svn commit -m "sharing code"
+brew install gv
+brew install gv
+ls
+cd rlinden-sweight/hw4
+ls
+rm santis
+svn rm santis
+ls
+svn commit -m "fixing repo"
+svn update
+ls
+ls
+ls
+cat test.ps
+rm test.ps
+ls
+cat test
+ls test
+cat test/StateSpec.hs 
+vim test/StateSpec.hs 
+vim test/StateSpec.hs 
+vim PostScript.hs 
+cd hw4
+ls
+cd rlinden-sweight/hw4
+vim pic2ps.hs 
+ls
+cd ..
+sshfs sweight@knuth.cs.hmc.edu:courses/cs131 ./cs131
+cd cs131/
+ls
+cd rlinden-sweight/
+ls
+cd hw4
+ls
+vim PostScript.hs 
+vim santis
+ls
+vim Absyn.hs 
+cd rlinden-sweight/hw4
+vim PicParse
+vim PicParser.hs 
+vim PicParser.hs 
+vim PostScript.hs 
+svn update
+vim PostScript.hs 
+ls
+cd ~/Downloads/
+ls
+ls
+cd ../Documents/cs131/cgivens-sweight/
+ls
+cd lab3/
+ls
+cd lc1
+ls
+cd ../../
+ls
+cd ..
+ls
+cd sweight-wli/
+ls
+cd lab4/
+ls
+./figure.ps
+cd rlinden-sweight/hw4
+ls
+vim PicLexer.hs 
+cd ~
+./knuth.sh 
+brew install emacs
+emacs
+emacs
+vim golf
+vimgolf
+brew install vimgolf
+brew install gem
+brew install ruby
+gem install vimgolf
+sudo gem install vimgolf
+vimgolf
+vimgolf local
+vimgolf setup
+vimgolf
+vimgolf put 55b18bbea9c2c30d04000001
+tmux ls
+ls
+git clone https://github.com/Parth/dotfiles
+ls
+cd dotfiles/
+ls
+./deplot
+./deploy
+./deploy
+./deploy
+ls
+cd dotfiles/
+ls
+./deploy
+vim
+vim -u ./vim/vimrc.vim 
+slakdfjlksdfjk
+vim
+sed  -n l
+fg
+sed  -n l
+fg
+fg
+cd dotfiles/ivm
+cd dotfiles/vim
+ls
+vim vimrc.vim 
+vim vimrc.vim 
+vim vimrc.vim 
+vim vimrc.vim 
+vim vimrc.vim 
+vim vimrc.vim 
+vim vimrc.vim 
+vim vimrc.vim 
+vim ~/.bashrc
+vim ~/.profile
+cd dotfiles/vim/
+vim vimrc.vim 
+vim vimrc.vim 
+/Users/santi/Downloads/ghostscript-9.26-linux-x86_64/gs-926-linux-x86_64 ; exit;
+/Users/santi/Downloads/ghostscript-9.26-linux-x86_64/gs-926-linux-x86_64 ; exit;
+cd ../../Downloads/
+ls
+cd MacGhostView524.dmg 
+cd gv-3.7.4
+ls
+make
+make INSTALL
+./install-sh 
+cat install-sh 
+ls
+make Makefile.am
+make Makefile.in
+cat README
+./install-sh 
+ls -al
+vim ParserBase.hs 
+cd ../../../dotfiles/tmux/
+ls
+vim tmux-keybindings.conf 
+vim SimpleExpr.hs 
+vim Absyn.hs 
+cd ../../../dotfiles/tmux/
+ls
+cat tmux-keybindings.conf 
+cabal update
+cabal update install hspec
+cabal new-update 
+cabal-install hpsec 
+cabal-install hspec 
+cabal new-install hspec 
+cabal --lib new-install hspec 
+ls
+cd ..
+cd ~/
+./mknuth.sh 
+diskutil unmount
+diskutil unmount -f
+diskutil unmount cs131
+diskutil ls
+diskutil
+diskutil list
+diskutil list
+diskutil
+./mknuth.sh 
+ls
+ls cs131/
+ls
+cd  cs131/sweight/hw5
+ls
+tmux ls
+tmux
+tmux ls
+ls
+./mknuth.sh 
+./mknuth.sh 
