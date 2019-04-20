@@ -1,8 +1,12 @@
 #!/bin/bash
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export WORKON_HOME=/Users/santi/.virtualenvsexport 
+export DOTDIR='~/dotfiles'
 export VIMINIT='source $MYVIMRC'
-export MYVIMRC='~/dotfiles/vim/vimrc.vim'  # Note the . (dot) before vimrc. If that is what you have called it.
+export MYBASHRC="$DOTDIR/.bashrc"
+export MYVIMRC="$DOTDIR/vim/vimrc.vim"  # Note the . (dot) before vimrc. If that is what you have called it.
+export MYTMUXCONF="$DOTDIR/tmux/tmux.conf"
+export MYEMACSINIT="$DOTDIR/.emacs.d/init.el"
 PROJECT_HOME=/Users/santi/Develsource /usr/local/bin/virtualenvwrapper.sh
 
 PS1='\u\w\$ '
@@ -35,9 +39,10 @@ elif [[ "$OSTYPE" == "win32" ]]; then
     alias l.='ls -d .* --color=auto'
 fi
     
+alias tmux="tmux -f $MYTMUXCONF"
 alias apt-get='sudo apt-get'
 alias update='sudo apt-get update && sudo apt-get upgrade'
-alias .emacs='~/dotfiles/.emacs.d/init.el'
+alias .emacs="$MYEMACSINIT"
 alias c='clear'
 
 export PATH="/usr/local/sbin:$PATH"
