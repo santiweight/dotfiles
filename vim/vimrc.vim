@@ -98,10 +98,12 @@ filetype plugin indent on
 	vnoremap L $
 
 	set backspace=indent,eol,start
-    set pastetoggle=<C-p>
+    set pastetoggle=<leader>sp
 
 	nnoremap <Space> za
 	nnoremap <leader>zz zf}
+
+    nn Y y$
 
 	nnoremap vv 0v
 	nnoremap <leader>l :set list!<cr>
@@ -156,26 +158,23 @@ let g:lightline = {
 
 	nnoremap <leader>rso :mapc<CR>:w<CR>:so $MYVIMRC<CR>
 	nnoremap <leader>r. :edit!<CR>
-    " nnoremap <leader>t :tabnew<CR>:Ex<CR>
 	nnoremap <leader>v :vsplit<CR>:w<CR>:Ex<CR>
 	nnoremap <leader>s :split<CR>:w<CR>:Ex<CR>
     nnoremap <leader>cw <C-w><C-c>
     
-    "Mode Settings
-
+    " Mode cursor settings
     let &t_SI.="\e[5 q" "SI = INSERT mode
     let &t_SR.="\e[4 q" "SR = REPLACE mode
     let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 
-    "Cursor settings:
+        "Cursor settings:
+        "  1 -> blinking block
+        "  2 -> solid block 
+        "  3 -> blinking underscore
+        "  4 -> solid underscore
+        "  5 -> blinking vertical bar
+        "  6 -> solid vertical bar
 
-    "  1 -> blinking block
-    "  2 -> solid block 
-    "  3 -> blinking underscore
-    "  4 -> solid underscore
-    "  5 -> blinking vertical bar
-    "  6 -> solid vertical bar
-    "
     nnoremap <tab> <C-w><C-w>
     vnoremap <tab> <C-w><C-w>
 
@@ -202,7 +201,7 @@ let g:lightline = {
 " Future stuff
 	"Swap line
 	"Insert blank below and above
-    vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
+    " vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 
 	nnoremap <m-k> :m .-2<CR>==
     nnoremap <m-j> :m .+1<CR>==
