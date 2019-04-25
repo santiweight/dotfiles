@@ -1,7 +1,7 @@
 "PLUGINS
 set nocompatible
 filetype off
-set rtp+=~/dotfiles/vim/bundle/Vundle.vim
+set rtp+=$DOTDIR/vim/bundle/Vundle.vim
 
 call vundle#begin()
 
