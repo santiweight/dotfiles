@@ -1,13 +1,10 @@
 #!/bin/bash
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-export WORKON_HOME=/Users/santi/.virtualenvsexport 
 export DOTDIR="$HOME/dotfiles"
 export VIMINIT='source $MYVIMRC'
 export MYBASHRC="$DOTDIR/.bashrc"
 export MYVIMRC="$DOTDIR/vim/vimrc.vim"  # Note the . (dot) before vimrc. If that is what you have called it.
 export MYTMUXCONF="$DOTDIR/tmux/tmux.conf"
 export MYEMACSINIT="$DOTDIR/.emacs.d/init.el"
-PROJECT_HOME=/Users/santi/Develsource /usr/local/bin/virtualenvwrapper.sh
 
 PS1='\u\w\$ '
 [ -z "$PS1" ] && return
