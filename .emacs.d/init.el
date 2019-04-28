@@ -266,3 +266,10 @@ There are two things you can do about this warning:
             (local-set-key "\M-I" 'org-toggle-iimage-in-org)
             ;; fix tab
             (local-set-key "\C-b" 'org-next-visible-heading)))
+
+(require-package 'auctex)
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+
+(require-package 'latex-preview-pane)
+(latex-preview-pane-enable)

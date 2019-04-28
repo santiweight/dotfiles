@@ -1,47 +1,53 @@
 "PLUGINS
 set nocompatible
 filetype off
-set rtp+=~/dotfiles/vim/bundle/Vundle.vim
+    so ~/dotfiles/vim/tabs.vim
+    so ~/dotfiles/vim/packages.vim
+    set rtp+=~/dotfiles/vim/bundle/Vundle.vim
 
+" Function to vundle all plugins
 call vundle#begin()
-
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-surround'
-Plugin 'w0rp/ale'
-Plugin 'tpope/vim-commentary'
-Plugin 'itchyny/lightline.vim'
-Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'wellle/targets.vim'
-Plugin 'maxbrunsfeld/vim-yankstack'
-Plugin 'valloric/youcompleteme'
-
+    "Plugin 'vim-syntastic/syntastic'
+    Plugin 'tbastos/vim-lua'
+    Plugin 'yegappan/mru'
+    Plugin 'sjl/gundo.vim'
+    Plugin 'lervag/vimtex'
+    Plugin 'christoomey/vim-tmux-navigator'
+    Plugin 'VundleVim/Vundle.vim'
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'tpope/vim-surround'
+    Plugin 'w0rp/ale'
+    Plugin 'tpope/vim-commentary'
+    Plugin 'itchyny/lightline.vim'
+    Plugin 'michaeljsmith/vim-indent-object'
+    Plugin 'wellle/targets.vim'
+    Plugin 'maxbrunsfeld/vim-yankstack'
+    Plugin 'valloric/youcompleteme'
+    Plugin 'tmhedberg/SimpylFold'
+    Plugin 'vim-scripts/indentpython.vim'
+    Plugin 'tpope/vim-unimpaired'
+    Plugin 'xuhdev/vim-latex-live-preview'
 " Add plugins before this line
 call vundle#end()
+call yankstack#setup()
+
 filetype plugin indent on
 
-
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 " Header commands
 	let mapleader=","
 
-" Tab settings
-	set autoindent
-	set tabstop=4
-	set shiftwidth=4
-	set expandtab
-    set smarttab
-
 " Presentation settings
-    set textwidth=80
+    set textwidth=0
+
+    set relativenumber
 
 	syntax on
     set colorcolumn+=80
     highlight ColorColumn ctermbg=0 guibg=lightgrey
 
     set dir=/tmp/
-	set number
 
     set autochdir
 	set laststatus=2
@@ -57,52 +63,39 @@ filetype plugin indent on
 
     set complete+=k
 
-	autocmd Filetype html setlocal sw=2 expandtab
-	autocmd Filetype javascript setlocal sw=4 expandtab
-
 	set cursorline
 	hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
 
 	set hlsearch
     hi Search ctermbg=LightYellow
     hi Search ctermfg=Red
+    set smartcase
 
     nnoremap <silent> <esc><esc> <esc>:nohlsearch<CR><esc>
-    nnoremap <C-n> :NERDTreeToggle<CR>
 
-   func! WordProcessor()
-        map j gj
-        map k gk
-        setlocal textwidth=80
-
-        setlocal formatoptions=1
-        setlocal noexpandtab
-        setlocal wrap
-        setlocal linebreak
-        setlocal nonumber
-        setlocal spell spelllang=en_us
-    endfunction
+    nnoremap j gj
+    nnoremap k gk
 
 	nnoremap n nzzzv
 	nnoremap N Nzzzv
-    autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
 
-    nnoremap <C-l> }
-    nnoremap <C-h> {
-    vnoremap <C-l> }
-    vnoremap <C-h> {
+    nnoremap <S-l> }
+    nnoremap <S-h> {
+    vnoremap <S-l> }
+    vnoremap <S-h> {
 
 	nnoremap H ^
 	nnoremap L $
 	vnoremap H ^
-	vnoremap L $
+    vnoremap L $
 
 	set backspace=indent,eol,start
-    set pastetoggle=<leader>sp
+    set pastetoggle=<leader>op
 
 	nnoremap <Space> za
 	nnoremap <leader>zz zf}
 
+    nn T ct
     nn Y y$
 
 	nnoremap vv 0v
@@ -112,37 +105,6 @@ filetype plugin indent on
 
 " Language Specific
 	" Tabs
-		so ~/dotfiles/vim/tabs.vim
-
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
- 
-" this is a piece of tester text for parenthesising function
-	" General
-		" inoremap <leader>for <esc>Ifor (int i = 0; i < <esc>A; i++) {<enter>}<esc>O<tab>
-		" inoremap <leader>pfor <esc>Ifor i in range(0, <esc>A):  <enter><esc>O<tab>
-		" inoremap <leader>if <esc>Iif (<esc>A) {<enter>}<esc>O<tab>
-    
-	" Java
-	"   inoremap <leader>sys <esc>ISystem.out.println(<esc>A);
-	"   vnoremap <leader>sys yOSystem.out.println(<esc>pA);
-
-	" Java
-	"   inoremap <leader>con <esc>Iconsole.log(<esc>A);
-	"   vnoremap <leader>con yOconsole.log(<esc>pA);
-
-	" C++
-	"   inoremap <leader>cout <esc>Istd::cout << <esc>A << std::endl;
-	"   vnoremap <leader>cout yOstd::cout << <esc>pA << std:endl;
-
-	" C
-	"   inoremap <leader>out <esc>Iprintf(<esc>A);<esc>2hi
-	"   vnoremap <leader>out yOprintf(, <esc>pA);<esc>h%a
-
-	" Typescript
-	"   autocmd BufNewFile,BufRead *.ts set syntax=javascript
-	"   autocmd BufNewFile,BufRead *.tsx set syntax=javascript
 
 	" Markup
 		inoremap <leader>< <esc>I<<esc>A><esc>yypa/<esc>O<tab>
@@ -154,13 +116,16 @@ let g:lightline = {
 	nnoremap <leader>q :q<CR>
 	nnoremap <leader>x :x<CR>
 
-    nnoremap <D-y> y$
+    "nnoremap <D-y> y$
 
 	nnoremap <leader>rso :mapc<CR>:w<CR>:so $MYVIMRC<CR>
 	nnoremap <leader>r. :edit!<CR>
 	nnoremap <leader>v :vsplit<CR>:w<CR>:Ex<CR>
 	nnoremap <leader>s :split<CR>:w<CR>:Ex<CR>
     nnoremap <leader>cw <C-w><C-c>
+
+    nnoremap <leader>ev :vsp $MYVIMRC<CR>
+    nnoremap <leader>eb :vsp $MYBASHRC<CR>
     
     " Mode cursor settings
     let &t_SI.="\e[5 q" "SI = INSERT mode
@@ -206,11 +171,17 @@ let g:lightline = {
 	nnoremap <m-k> :m .-2<CR>==
     nnoremap <m-j> :m .+1<CR>==
 
-    nmap <m-p> <Plug>yankstack_substitute_older_paste
-    nmap <m-P> <Plug>yankstack_substitute_newer_paste
-     
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Tmux options
+    " mouse compatibility with tmux
+    if has("mouse_sgr")
+        set ttymouse=sgr
+    else
+        set ttymouse=xterm2
+    end
+
+" Mac settings
+    " set alt key bindings
     if has("gui_macvim")
         set macmeta
         nmap π <m-p>
@@ -222,7 +193,9 @@ let g:lightline = {
         nmap œ <m-q>
     endif
 
+" Window management
     nnoremap <leader><tab> :tabnext<CR>
+    nnoremap <leader><s-tab> :tabprevious<CR>
     nnoremap <leader>tp :tabprevious<CR>
     nnoremap <leader>tn :tabnew<CR>
     nnoremap <leader>tq :tabclose<CR>

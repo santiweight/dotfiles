@@ -1,14 +1,20 @@
 #!/bin/bash
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-export WORKON_HOME=/Users/santi/.virtualenvsexport 
 export DOTDIR="$HOME/dotfiles"
 export VIMINIT='source $MYVIMRC'
-export MYBASHRC="$DOTDIR/.bashrc"
-export MYVIMRC="$DOTDIR/vim/vimrc.vim"  # Note the . (dot) before vimrc. If that is what you have called it.
+export MYBASHRC="$DOTDIR/bash/bashrc"
+export MYVIMRC="$DOTDIR/vim/vimrc.vim"
 export MYTMUXCONF="$DOTDIR/tmux/tmux.conf"
 export MYEMACSINIT="$DOTDIR/.emacs.d/init.el"
-PROJECT_HOME=/Users/santi/Develsource /usr/local/bin/virtualenvwrapper.sh
 
+export PATH="$HOME/bin:/usr/local/sbin:$PATH"
+export TERM=xterm-256color
+
+# This is GOLD for finding out what is taking so much space on your drives!
+alias diskspace="du -S | sort -n -r |more"
+# Show me the size (sorted) of only the folders in this directory
+alias folders="find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn"
+
+# This is where you put your hand rolled scripts (remember to chmod them)
 PS1='\u\w\$ '
 [ -z "$PS1" ] && return
 function cd {
@@ -27,23 +33,24 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     alias OS='darwin'
     alias ls='ls -G'
     alias lsa='ls -a'
-    alias lsal='ls -la'
-    alias ll='ls -la'
+    alias lsal='ls -alh'
+    alias ll='ls -alh'
     alias l.='ls -d .* -G'
+    alias l='ls -CFlh'
 elif [[ "$OSTYPE" == "win32" ]]; then
     alias ls='ls --color=auto'
     alias lsa='ls -a'
     alias lsl='ls -l'
-    alias lsal='ls -al'
-    alias ll='ls -al'
+    alias lsal='ls -alh'
+    alias ll='ls -alh'
     alias l.='ls -d .* --color=auto'
+    alias lsd='ls -alF | grep /$'
+    alias l='ls -CFlh'
 fi
     
 alias tmux="tmux -f $MYTMUXCONF"
 alias apt-get='sudo apt-get'
-alias update='sudo apt-get update && sudo apt-get upgrade'
+alias apt-update='sudo apt-get update && sudo apt-get upgrade'
 alias .emacs="$MYEMACSINIT"
 alias c='clear'
 
-export PATH="/usr/local/sbin:$PATH"
-export TERM=xterm-256color

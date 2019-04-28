@@ -1,64 +1,26 @@
-" For language specific tab settings
+" Global tab settings
+	set autoindent
+	set tabstop=4
+	set shiftwidth=4
+	set expandtab
+    set smarttab
 
-autocmd FileType vue set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
-autocmd FileType js set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
-autocmd FileType html set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
-autocmd FileType go set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4 smarttab
+" Language specific tab settings
+    autocmd BufRead,BufNewFile *.py,*.pyw,*.c,*.h match ExtraWhitespace /\s\+$/
+	autocmd Filetype html setlocal sw=2 expandtab
+	autocmd Filetype javascript setlocal sw=4 expandtab
+    autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
+    autocmd FileType vue set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
+    autocmd FileType js set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
+    autocmd FileType html set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
+    autocmd FileType go set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4 smarttab
+    autocmd FileType tex,txt set tabstop=4 softtabstop=0 noexpandtab shiftwidth=2 smarttab smartcase linebreak spell | nnoremap j gj| nnoremap k gk
 
-function ShowSpaces(...)
-  let @/='\v(\s+$)|( +\ze\t)'
-  let oldhlsearch=&hlsearch
-  if !a:0
-    let &hlsearch=!&hlsearch
-  else
-    let &hlsearch=a:1
-  end
-  return oldhlsearch
-endfunction
-
-function TrimSpaces() range
-  let oldhlsearch=ShowSpaces(1)
-  execute a:firstline.",".a:lastline."substitute ///gec"
-  let &hlsearch=oldhlsearch
-endfunction
-
-" ----- Emulate 'gf' but recognize :line format -----
-" function! GotoFile(w)
-"     let curword = expand("<cfile>")
-"     if (strlen(curword) == 0)
-"         return
-"     endif
-"     let matchstart = match(curword, ':\d\+$')
-"     if matchstart > 0
-"         let pos = '+' . strpart(curword, matchstart+1)
-"         let fname = strpart(curword, 0, matchstart)
-"     else
-"         let pos = ""
-"         let fname = curword
-"     endif
-"     " check exists file.
-"     if filereadable(fname)
-"         let fullname = fname
-"     else
-"         " try find file with prefix by working directory
-"         let fullname = getcwd() . '/' . fname
-"         if ! filereadable(fullname)
-"             " the last try, using current directory based on file opened.
-"             let fullname = expand('%:h') . '/' . fname
-"         endif
-"     endif
-
-"    " Open new window if requested
-"     if a:w == "new"
-"         new
-"     endif
-"     " Use 'find' so path is searched like 'gf' would
-"     execute 'find ' . pos . ' ' . fname
-" endfunction
-
-" set isfname+=: " include colon in filenames
-
-" " Override vim commands 'gf', '^Wf', '^W^F'
-" nnoremap gf :call GotoFile("")<CR>
-" nnoremap <C-W>f :call GotoFile("new")<CR>
-" nnoremap <C-W><C-F> :call GotoFile("new")<CR>
+au BufNewFile,BufRead *.py
+    \ set tabstop=4  |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
