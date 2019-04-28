@@ -1,9 +1,10 @@
 "PLUGINS
 set nocompatible
 filetype off
-    so ~/dotfiles/vim/tabs.vim
-    so ~/dotfiles/vim/packages.vim
-    set rtp+=~/dotfiles/vim/bundle/Vundle.vim
+
+so $DOTDIR/vim/tabs.vim
+so $DOTDIR/vim/packages.vim
+set rtp+=$DOTDIR/vim/bundle/Vundle.vim
 
 " Function to vundle all plugins
 call vundle#begin()
