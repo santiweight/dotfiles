@@ -14,7 +14,7 @@
     autocmd FileType js set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
     autocmd FileType html set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
     autocmd FileType go set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4 smarttab
-    autocmd FileType tex,txt set tabstop=4 softtabstop=0 noexpandtab shiftwidth=2 smarttab smartcase linebreak spell | nnoremap j gj| nnoremap k gk
+    autocmd FileType tex,txt set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4 smarttab smartcase linebreak spell nocul colorcolumn=0 | nnoremap j gj| nnoremap k gk
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4  |

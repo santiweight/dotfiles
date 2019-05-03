@@ -9,26 +9,39 @@ set rtp+=$DOTDIR/vim/bundle/Vundle.vim
 " Function to vundle all plugins
 call vundle#begin()
     "Plugin 'vim-syntastic/syntastic'
-    Plugin 'tbastos/vim-lua'
+    Plugin 'VundleVim/Vundle.vim'
+
+    " Make vim an IDE
+    Plugin 'w0rp/ale'
+    Plugin 'valloric/youcompleteme'
+
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'christoomey/vim-tmux-navigator'
+    Plugin 'maxbrunsfeld/vim-yankstack'
     Plugin 'yegappan/mru'
     Plugin 'sjl/gundo.vim'
-    Plugin 'lervag/vimtex'
-    Plugin 'christoomey/vim-tmux-navigator'
-    Plugin 'VundleVim/Vundle.vim'
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'tpope/vim-surround'
-    Plugin 'w0rp/ale'
-    Plugin 'tpope/vim-commentary'
-    Plugin 'itchyny/lightline.vim'
-    Plugin 'michaeljsmith/vim-indent-object'
-    Plugin 'wellle/targets.vim'
-    Plugin 'maxbrunsfeld/vim-yankstack'
-    Plugin 'valloric/youcompleteme'
-    Plugin 'tmhedberg/SimpylFold'
+
+    " Language specific
     Plugin 'vim-scripts/indentpython.vim'
-    Plugin 'tpope/vim-unimpaired'
+    Plugin 'tmhedberg/SimpylFold'
+    Plugin 'tbastos/vim-lua'
+    Plugin 'lervag/vimtex'
     Plugin 'xuhdev/vim-latex-live-preview'
+
+    " Visual
+    Plugin 'vim-airline/vim-airline'
+    Plugin 'vim-airline/vim-airline-themes'
+
+    " Add vim objects
+    Plugin 'wellle/targets.vim'
+    Plugin 'michaeljsmith/vim-indent-object'
+
+    " Tim Pope
+    Plugin 'tpope/vim-commentary'
+    Plugin 'tpope/vim-surround'
+    Plugin 'tpope/vim-unimpaired'
+    Plugin 'tpope/vim-fugitive'
+
 " Add plugins before this line
 call vundle#end()
 call yankstack#setup()
@@ -40,13 +53,20 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 	let mapleader=","
 
 " Presentation settings
-    set textwidth=0
-
     set relativenumber
 
-	syntax on
+    set textwidth=0
+	set breakindent
+
+	hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
+
     set colorcolumn+=80
     highlight ColorColumn ctermbg=0 guibg=lightgrey
+	set cursorline
+
+	set display+=lastline
+
+	syntax on
 
     set dir=/tmp/
 
@@ -64,12 +84,9 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 
     set complete+=k
 
-	set cursorline
-	hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
-
+" Highlight options
 	set hlsearch
-    hi Search ctermbg=LightYellow
-    hi Search ctermfg=Red
+    hi Search ctermbg=LightYellow ctermfg=Red
     set smartcase
 
     nnoremap <silent> <esc><esc> <esc>:nohlsearch<CR><esc>
@@ -111,7 +128,7 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 		inoremap <leader>< <esc>I<<esc>A><esc>yypa/<esc>O<tab>
 
 
-" File and Window Management 
+" File and Window Management
 	inoremap <leader>w <Esc>:w<CR>
 	nnoremap <leader>w :w<CR>
 	nnoremap <leader>q :q<CR>
@@ -125,9 +142,11 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 	nnoremap <leader>s :split<CR>:w<CR>:Ex<CR>
     nnoremap <leader>cw <C-w><C-c>
 
+	nnoremap <leader>2 2s
+
     nnoremap <leader>ev :vsp $MYVIMRC<CR>
     nnoremap <leader>eb :vsp $MYBASHRC<CR>
-    
+
     " Mode cursor settings
     let &t_SI.="\e[5 q" "SI = INSERT mode
     let &t_SR.="\e[4 q" "SR = REPLACE mode
@@ -135,7 +154,7 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 
         "Cursor settings:
         "  1 -> blinking block
-        "  2 -> solid block 
+        "  2 -> solid block
         "  3 -> blinking underscore
         "  4 -> solid underscore
         "  5 -> blinking vertical bar
@@ -159,7 +178,7 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 	" https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
 	autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
 	" Notification after file change
-	set autoread 
+	set autoread
 	" https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
 	autocmd FileChangedShellPost *
 	  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
@@ -193,6 +212,23 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
         nmap ø <m-o>
         nmap œ <m-q>
     endif
+
+" Colour edits
+    hi clear Folded
+    hi Folded ctermfg=191
+    hi clear SignColumn " ctermbg=234
+    hi ALEErrorSign ctermbg=234 ctermfg=160
+    hi ALEWarningSign ctermbg=234 ctermfg=11
+    hi ALEStyleSign ctermbg=234 ctermfg=11
+
+    let g:ale_sign_error = '>>'
+    let g:ale_sign_warning = '=='
+    let g:ale_sign_style_error = '=='
+
+    let g:ale_completion_delay = 10
+    let g:ale_completion_enabled = 1
+
+
 
 " Window management
     nnoremap <leader><tab> :tabnext<CR>

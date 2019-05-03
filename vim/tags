@@ -1,0 +1,142 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+<C-n>	packages.vim	/^    nnoremap <C-n> :NERDTreeToggle<CR>$/;"	m
+<S-h>	vimrc.vim	/^    nnoremap <S-h> {$/;"	m
+<S-h>	vimrc.vim	/^    vnoremap <S-h> {$/;"	m
+<S-l>	vimrc.vim	/^    nnoremap <S-l> }$/;"	m
+<S-l>	vimrc.vim	/^    vnoremap <S-l> }$/;"	m
+<Space>	vimrc.vim	/^	nnoremap <Space> za$/;"	m
+<esc><esc>	vimrc.vim	/^    nnoremap <silent> <esc><esc> <esc>:nohlsearch<CR><esc>$/;"	m
+<leader><	vimrc.vim	/^		inoremap <leader>< <esc>I<<esc>A><esc>yypa\/<esc>O<tab>$/;"	m
+<leader><s-tab>	vimrc.vim	/^    nnoremap <leader><s-tab> :tabprevious<CR>$/;"	m
+<leader><tab>	vimrc.vim	/^    nnoremap <leader><tab> :tabnext<CR>$/;"	m
+<leader>cw	vimrc.vim	/^    nnoremap <leader>cw <C-w><C-c>$/;"	m
+<leader>eb	vimrc.vim	/^    nnoremap <leader>eb :vsp $MYBASHRC<CR>$/;"	m
+<leader>ev	vimrc.vim	/^    nnoremap <leader>ev :vsp $MYVIMRC<CR>$/;"	m
+<leader>l	vimrc.vim	/^	nnoremap <leader>l :set list!<cr>$/;"	m
+<leader>m	packages.vim	/^    nnoremap <leader>m :MRU<CR>$/;"	m
+<leader>q	vimrc.vim	/^	nnoremap <leader>q :q<CR>$/;"	m
+<leader>r.	vimrc.vim	/^	nnoremap <leader>r. :edit!<CR>$/;"	m
+<leader>rso	vimrc.vim	/^	nnoremap <leader>rso :mapc<CR>:w<CR>:so $MYVIMRC<CR>$/;"	m
+<leader>s	vimrc.vim	/^	nnoremap <leader>s :split<CR>:w<CR>:Ex<CR>$/;"	m
+<leader>tn	vimrc.vim	/^    nnoremap <leader>tn :tabnew<CR>$/;"	m
+<leader>tp	vimrc.vim	/^    nnoremap <leader>tp :tabprevious<CR>$/;"	m
+<leader>tq	vimrc.vim	/^    nnoremap <leader>tq :tabclose<CR>$/;"	m
+<leader>u	packages.vim	/^    nnoremap <leader>u :GundoToggle<CR>     $/;"	m
+<leader>v	vimrc.vim	/^	nnoremap <leader>v :vsplit<CR>:w<CR>:Ex<CR>$/;"	m
+<leader>w	vimrc.vim	/^	inoremap <leader>w <Esc>:w<CR>$/;"	m
+<leader>w	vimrc.vim	/^	nnoremap <leader>w :w<CR>$/;"	m
+<leader>x	vimrc.vim	/^	nnoremap <leader>x :x<CR>$/;"	m
+<leader>zz	vimrc.vim	/^	nnoremap <leader>zz zf}$/;"	m
+<m-P>	packages.vim	/^    nmap <m-P> <Plug>yankstack_substitute_newer_paste$/;"	m
+<m-j>	vimrc.vim	/^    nnoremap <m-j> :m .+1<CR>==$/;"	m
+<m-k>	vimrc.vim	/^	nnoremap <m-k> :m .-2<CR>==$/;"	m
+<m-p>	packages.vim	/^    nmap <m-p> <Plug>yankstack_substitute_older_paste$/;"	m
+<tab>	vimrc.vim	/^    nnoremap <tab> <C-w><C-w>$/;"	m
+<tab>	vimrc.vim	/^    vnoremap <tab> <C-w><C-w>$/;"	m
+Bundle	bundle/Vundle.vim/autoload/vundle.vim	/^com! -nargs=+                                                Bundle        call vundle#config#bundle(<args>)$/;"	c
+BundleClean	bundle/Vundle.vim/autoload/vundle.vim	/^com! -nargs=? -bang                                          BundleClean   PluginClean<bang>$/;"	c
+BundleDocs	bundle/Vundle.vim/autoload/vundle.vim	/^com! -nargs=0                                                BundleDocs    PluginDocs$/;"	c
+BundleInstall	bundle/Vundle.vim/autoload/vundle.vim	/^com! -nargs=? -bang -complete=custom,vundle#scripts#complete BundleInstall PluginInstall<bang> <args>$/;"	c
+BundleList	bundle/Vundle.vim/autoload/vundle.vim	/^com! -nargs=0 -bang                                          BundleList    PluginList<bang>$/;"	c
+BundleSearch	bundle/Vundle.vim/autoload/vundle.vim	/^com! -nargs=? -bang -complete=custom,vundle#scripts#complete BundleSearch  PluginSearch<bang> <args>$/;"	c
+BundleUpdate	bundle/Vundle.vim/autoload/vundle.vim	/^com!                                                         BundleUpdate  PluginInstall!$/;"	c
+H	vimrc.vim	/^	nnoremap H ^$/;"	m
+H	vimrc.vim	/^	vnoremap H ^$/;"	m
+L	vimrc.vim	/^	nnoremap L \$$/;"	m
+L	vimrc.vim	/^    vnoremap L \$$/;"	m
+MakeTags	vimrc.vim	/^    command! MakeTags !ctags -R .$/;"	c
+N	vimrc.vim	/^	nnoremap N Nzzzv$/;"	m
+Plugin	bundle/Vundle.vim/autoload/vundle.vim	/^com! -nargs=+  -bar   Plugin$/;"	c
+PluginClean	bundle/Vundle.vim/autoload/vundle.vim	/^com! -nargs=? -bang   PluginClean$/;"	c
+PluginDocs	bundle/Vundle.vim/autoload/vundle.vim	/^com! -nargs=0         PluginDocs$/;"	c
+PluginInstall	bundle/Vundle.vim/autoload/vundle.vim	/^com! -nargs=* -bang -complete=custom,vundle#scripts#complete PluginInstall$/;"	c
+PluginList	bundle/Vundle.vim/autoload/vundle.vim	/^com! -nargs=0 -bang PluginList$/;"	c
+PluginSearch	bundle/Vundle.vim/autoload/vundle.vim	/^com! -nargs=? -bang -complete=custom,vundle#scripts#complete PluginSearch$/;"	c
+PluginUpdate	bundle/Vundle.vim/autoload/vundle.vim	/^com! -nargs=* -complete=custom,vundle#scripts#complete PluginUpdate PluginInstall! <args>$/;"	c
+VundleClean	bundle/Vundle.vim/autoload/vundle.vim	/^com! -nargs=? -bang                                          VundleClean   PluginClean<bang>$/;"	c
+VundleDocs	bundle/Vundle.vim/autoload/vundle.vim	/^com! -nargs=0                                                VundleDocs    PluginDocs$/;"	c
+VundleInstall	bundle/Vundle.vim/autoload/vundle.vim	/^com! -nargs=? -bang -complete=custom,vundle#scripts#complete VundleInstall PluginInstall<bang> <args>$/;"	c
+VundleSearch	bundle/Vundle.vim/autoload/vundle.vim	/^com! -nargs=? -bang -complete=custom,vundle#scripts#complete VundleSearch  PluginSearch<bang> <args>$/;"	c
+VundleUpdate	bundle/Vundle.vim/autoload/vundle.vim	/^com!                                                         VundleUpdate  PluginInstall!$/;"	c
+VundleUpdate	bundle/Vundle.vim/autoload/vundle.vim	/^com! -nargs=*       -complete=custom,vundle#scripts#complete VundleUpdate  PluginInstall! <args>$/;"	c
+WordProcessor	packages.vim	/^    func! WordProcessor()$/;"	f
+b:did_ftplugin	bundle/Vundle.vim/ftplugin/vundlelog.vim	/^let b:did_ftplugin = 1$/;"	v
+bundle.is_pinned	bundle/Vundle.vim/autoload/vundle/config.vim	/^func! s:bundle.is_pinned()$/;"	f
+bundle.path	bundle/Vundle.vim/autoload/vundle/config.vim	/^func! s:bundle.path()$/;"	f
+check_bundle_name	bundle/Vundle.vim/autoload/vundle/config.vim	/^funct! s:check_bundle_name(bundle)$/;"	f
+create_changelog	bundle/Vundle.vim/autoload/vundle/scripts.vim	/^func! s:create_changelog() abort$/;"	f
+expand_path	bundle/Vundle.vim/autoload/vundle/config.vim	/^func! s:expand_path(path) abort$/;"	f
+fetch_scripts	bundle/Vundle.vim/autoload/vundle/scripts.vim	/^func! s:fetch_scripts(to)$/;"	f
+g:lisepreview_previewer	packages.vim	/^    let g:lisepreview_previewer = 'latexmk -f'$/;"	v
+get_current_origin_url	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! s:get_current_origin_url(bundle) abort$/;"	f
+get_current_sha	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! s:get_current_sha(bundle)$/;"	f
+has_doc	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! s:has_doc(rtp) abort$/;"	f
+helptags	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! s:helptags(rtp) abort$/;"	f
+init	bundle/Vundle.vim/test/files/test.erl	/^init(_) ->$/;"	f	module:mmc_logmon_sup
+j	vimrc.vim	/^    nnoremap j gj$/;"	m
+k	vimrc.vim	/^    nnoremap k gk$/;"	m
+line_return	vimrc.vim	/^	augroup line_return$/;"	a
+load_scripts	bundle/Vundle.vim/autoload/vundle/scripts.vim	/^func! s:load_scripts(bang)$/;"	f
+log	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! s:log(str, ...) abort$/;"	f
+make_sync_command	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! s:make_sync_command(bang, bundle) abort$/;"	f
+mapleader	vimrc.vim	/^	let mapleader=","$/;"	v
+mmc_logmon_sup	bundle/Vundle.vim/test/files/test.erl	/^-module(mmc_logmon_sup).$/;"	m
+n	vimrc.vim	/^	nnoremap n nzzzv$/;"	m
+parse_name	bundle/Vundle.vim/autoload/vundle/config.vim	/^func! s:parse_name(arg)$/;"	f
+parse_options	bundle/Vundle.vim/autoload/vundle/config.vim	/^func! s:parse_options(opts)$/;"	f
+process	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! s:process(bang, cmd)$/;"	f
+rtp_add	bundle/Vundle.vim/autoload/vundle/config.vim	/^func! s:rtp_add(dir) abort$/;"	f
+rtp_add_a	bundle/Vundle.vim/autoload/vundle/config.vim	/^func! s:rtp_add_a()$/;"	f
+rtp_add_defaults	bundle/Vundle.vim/autoload/vundle/config.vim	/^func! s:rtp_add_defaults()$/;"	f
+rtp_rm	bundle/Vundle.vim/autoload/vundle/config.vim	/^func! s:rtp_rm(dir) abort$/;"	f
+rtp_rm_a	bundle/Vundle.vim/autoload/vundle/config.vim	/^func! s:rtp_rm_a()$/;"	f
+rtpath	bundle/Vundle.vim/autoload/vundle/config.vim	/^func! s:rtpath(opts)$/;"	f
+s:bundle	bundle/Vundle.vim/autoload/vundle/config.vim	/^let s:bundle = {}$/;"	v
+sign	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! s:sign(status)$/;"	f
+strip	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! s:strip(str)$/;"	f
+sync	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! s:sync(bang, bundle) abort$/;"	f
+system	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! s:system(cmd) abort$/;"	f
+view_changelog	bundle/Vundle.vim/autoload/vundle/scripts.vim	/^func! s:view_changelog()$/;"	f
+view_log	bundle/Vundle.vim/autoload/vundle/scripts.vim	/^func! s:view_log()$/;"	f
+vundle#begin	bundle/Vundle.vim/autoload/vundle.vim	/^func! vundle#begin(...) abort$/;"	f
+vundle#bundle_dir	bundle/Vundle.vim/autoload/vundle.vim	/^let vundle#bundle_dir = expand('$HOME\/.vim\/bundle', 1)$/;"	v
+vundle#bundles	bundle/Vundle.vim/autoload/vundle.vim	/^let vundle#bundles = []$/;"	v
+vundle#config#activate_bundles	bundle/Vundle.vim/autoload/vundle/config.vim	/^func! vundle#config#activate_bundles()$/;"	f
+vundle#config#bundle	bundle/Vundle.vim/autoload/vundle/config.vim	/^func! vundle#config#bundle(arg, ...)$/;"	f
+vundle#config#init	bundle/Vundle.vim/autoload/vundle/config.vim	/^func! vundle#config#init()$/;"	f
+vundle#config#init_bundle	bundle/Vundle.vim/autoload/vundle/config.vim	/^func! vundle#config#init_bundle(name, opts)$/;"	f
+vundle#config#require	bundle/Vundle.vim/autoload/vundle/config.vim	/^func! vundle#config#require(bundles) abort$/;"	f
+vundle#end	bundle/Vundle.vim/autoload/vundle.vim	/^func! vundle#end(...) abort$/;"	f
+vundle#installer#clean	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! vundle#installer#clean(bang) abort$/;"	f
+vundle#installer#delete	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! vundle#installer#delete(bang, dir_name) abort$/;"	f
+vundle#installer#docs	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! vundle#installer#docs() abort$/;"	f
+vundle#installer#helptags	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! vundle#installer#helptags(bundles) abort$/;"	f
+vundle#installer#install	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! vundle#installer#install(bang, name) abort$/;"	f
+vundle#installer#install_and_require	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! vundle#installer#install_and_require(bang, name) abort$/;"	f
+vundle#installer#list	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! vundle#installer#list(bang) abort$/;"	f
+vundle#installer#new	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! vundle#installer#new(bang, ...) abort$/;"	f
+vundle#installer#run	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! vundle#installer#run(func_name, name, ...) abort$/;"	f
+vundle#installer#shellesc	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! vundle#installer#shellesc(cmd) abort$/;"	f
+vundle#installer#shellesc_cd	bundle/Vundle.vim/autoload/vundle/installer.vim	/^func! vundle#installer#shellesc_cd(cmd) abort$/;"	f
+vundle#lazy_load	bundle/Vundle.vim/autoload/vundle.vim	/^let vundle#lazy_load = 0$/;"	v
+vundle#log	bundle/Vundle.vim/autoload/vundle.vim	/^let vundle#log = []$/;"	v
+vundle#rc	bundle/Vundle.vim/autoload/vundle.vim	/^func! vundle#rc(...) abort$/;"	f
+vundle#scripts#all	bundle/Vundle.vim/autoload/vundle/scripts.vim	/^func! vundle#scripts#all(bang, ...)$/;"	f
+vundle#scripts#bundle_names	bundle/Vundle.vim/autoload/vundle/scripts.vim	/^func! vundle#scripts#bundle_names(names)$/;"	f
+vundle#scripts#complete	bundle/Vundle.vim/autoload/vundle/scripts.vim	/^func! vundle#scripts#complete(a,c,d)$/;"	f
+vundle#scripts#reload	bundle/Vundle.vim/autoload/vundle/scripts.vim	/^func! vundle#scripts#reload() abort$/;"	f
+vundle#scripts#view	bundle/Vundle.vim/autoload/vundle/scripts.vim	/^func! vundle#scripts#view(title, headers, results)$/;"	f
+vundle#updated_bundles	bundle/Vundle.vim/autoload/vundle.vim	/^let vundle#updated_bundles = []$/;"	v
+vv	vimrc.vim	/^	nnoremap vv 0v$/;"	m
+ø	vimrc.vim	/^        nmap ø <m-o>$/;"	m
+œ	vimrc.vim	/^        nmap œ <m-q>$/;"	m
+˚	vimrc.vim	/^        nmap ˚ <m-k>$/;"	m
+˜	vimrc.vim	/^        nmap ˜ <m-n>$/;"	m
+π	vimrc.vim	/^        nmap π <m-p>$/;"	m
+∆	vimrc.vim	/^        nmap ∆ <m-j>$/;"	m
+∏	vimrc.vim	/^        nmap ∏ <m-P>$/;"	m
