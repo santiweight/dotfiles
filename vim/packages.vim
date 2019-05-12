@@ -66,3 +66,7 @@
         setlocal linebreak
         setlocal spell spelllang=en_us
     endfunction
+
+" Sideways Settings
+nnoremap <m-h> :SidewaysLeft<cr>
+nnoremap <m-l> :SidewaysRight<cr>

@@ -35,6 +35,7 @@ call vundle#begin()
     " Add vim objects
     Plugin 'wellle/targets.vim'
     Plugin 'michaeljsmith/vim-indent-object'
+    Plugin 'AndrewRadev/sideways.vim'
 
     " Tim Pope
     Plugin 'tpope/vim-commentary'
@@ -67,6 +68,8 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 	set display+=lastline
 
 	syntax on
+
+    set synmaxcol=10000
 
     set dir=/tmp/
 
@@ -211,19 +214,22 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
         nmap ˜ <m-n>
         nmap ø <m-o>
         nmap œ <m-q>
+        nmap ˙ <m-h>
+        nmap ¬ <m-l>
     endif
 
 " Colour edits
     hi clear Folded
-    hi Folded ctermfg=191
+    hi Folded ctermfg=191 ctermbg=235
     hi clear SignColumn " ctermbg=234
     hi ALEErrorSign ctermbg=234 ctermfg=160
     hi ALEWarningSign ctermbg=234 ctermfg=11
     hi ALEStyleSign ctermbg=234 ctermfg=11
+    hi ALEWarning cterm=underline ctermfg=green
 
     let g:ale_sign_error = '>>'
-    let g:ale_sign_warning = '=='
-    let g:ale_sign_style_error = '=='
+    let g:ale_sign_warning = ':('
+    let g:ale_sign_style_error = ':('
 
     let g:ale_completion_delay = 10
     let g:ale_completion_enabled = 1

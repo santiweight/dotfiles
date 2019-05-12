@@ -47,10 +47,10 @@ elif [[ "$OSTYPE" == "win32" ]]; then
     alias lsd='ls -alF | grep /$'
     alias l='ls -CFlh'
 fi
-    
+
 alias tmux="tmux -f $MYTMUXCONF"
 alias apt-get='sudo apt-get'
 alias apt-update='sudo apt-get update && sudo apt-get upgrade'
 alias .emacs="$MYEMACSINIT"
 alias c='clear'
-
+alias python='python3.7'

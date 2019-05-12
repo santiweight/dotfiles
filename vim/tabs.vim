@@ -24,3 +24,5 @@ au BufNewFile,BufRead *.py
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix
+    \ ab ipdb import ipdb; ipdb.set_trace() |
+    \ ab code import code; code.interact(local=dict(globals(), locals()))
