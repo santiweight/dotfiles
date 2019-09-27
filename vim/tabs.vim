@@ -16,13 +16,13 @@
     autocmd FileType go set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4 smarttab
     autocmd FileType tex,txt set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4 smarttab smartcase linebreak spell nocul colorcolumn=0 | nnoremap j gj| nnoremap k gk
 
-au BufNewFile,BufRead *.py
+au BufRead,BufNewFile *.py
     \ set tabstop=4  |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
-    \ set textwidth=79 |
+    " \ set textwidth=79 |
     \ set expandtab |
     \ set autoindent |
-    \ set fileformat=unix
-    \ ab ipdb import ipdb; ipdb.set_trace() |
-    \ ab code import code; code.interact(local=dict(globals(), locals()))
+    \ set fileformat=unix |
+    \ set nolinebreak
+ab ipdb import ipdb; ipdb.set_trace()

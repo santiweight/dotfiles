@@ -43,6 +43,8 @@ call vundle#begin()
     Plugin 'tpope/vim-unimpaired'
     Plugin 'tpope/vim-fugitive'
 
+    Plugin 'danro/rename.vim'
+
 " Add plugins before this line
 call vundle#end()
 call yankstack#setup()
@@ -137,7 +139,8 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 	nnoremap <leader>q :q<CR>
 	nnoremap <leader>x :x<CR>
 
-    "nnoremap <D-y> y$
+    nnoremap <D-c> "+y
+    nnoremap <leader>y "+y
 
 	nnoremap <leader>rso :mapc<CR>:w<CR>:so $MYVIMRC<CR>
 	nnoremap <leader>r. :edit!<CR>
@@ -231,7 +234,7 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
     let g:ale_sign_warning = ':('
     let g:ale_sign_style_error = ':('
 
-    let g:ale_completion_delay = 10
+    let g:ale_completion_delay = 1
     let g:ale_completion_enabled = 1
 
 

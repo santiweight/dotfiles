@@ -1,3 +1,13 @@
 if [ -f $HOME/dotfiles/bash/bashrc ]; then
         source $HOME/dotfiles/bash/bashrc
 fi
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+
+##
+# Your previous /Users/santi/.bash_profile file was backed up as /Users/santi/.bash_profile.macports-saved_2019-08-09_at_15:26:41
+##
+
+# MacPorts Installer addition on 2019-08-09_at_15:26:41: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+

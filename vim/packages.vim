@@ -1,10 +1,13 @@
 " ALE options
     let g:ale_fixers = {
-    \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+    \   '*': ['trim_whitespace'],
     \   'javascript': ['eslint'],
-    \   'python' : ['yapf']
+    \   'python' : ['yapf'],
     \}
 
+    let g:ale_linters ={
+      \   'haskell': ['hlint', 'hdevtools', 'hfmt'],
+      \}
     " Set this variable to 1 to fix files when you save them.
     let g:ale_fix_on_save = 1
 

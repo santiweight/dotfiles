@@ -1,12 +1,16 @@
 #!/bin/bash
 export DOTDIR="$HOME/dotfiles"
+export HOME="/Users/santi"
 export VIMINIT='source $MYVIMRC'
 export MYBASHRC="$DOTDIR/bash/bashrc"
 export MYVIMRC="$DOTDIR/vim/vimrc.vim"
 export MYTMUXCONF="$DOTDIR/tmux/tmux.conf"
 export MYEMACSINIT="$DOTDIR/.emacs.d/init.el"
+export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig:/usr/local/lib/pkgconfig"
 
-export PATH="$HOME/bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/Users/santi/local/bin:$PATH"
+export PATH="$HOME/Library/Haskell/bin:$HOME/.cabal/bin:$PATH"
+export PATH="/Users/santi/.local/bin:/usr/local/opt/libxml2/bin:/usr/local/Cellar/gettext/0.20.1/bin:$PATH"
 export TERM=xterm-256color
 
 # This is GOLD for finding out what is taking so much space on your drives!
@@ -18,7 +22,7 @@ alias folders="find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn"
 PS1='\u\w\$ '
 [ -z "$PS1" ] && return
 function cd {
-    builtin cd "$@" && ls -aF
+    builtin cd "$@" && ls -F
     }
 function dc {
     builtin cd "$@"
@@ -55,3 +59,26 @@ alias .emacs="$MYEMACSINIT"
 alias c='clear'
 alias pip='sudo pip3.7'
 alias python='python3.7'
+
+# unregister broken GHC packages. Run this a few times to resolve dependency rot in installed packages.
+# ghc-pkg-clean -f cabal/dev/packages*.conf also works.
+function ghc-pkg-clean() {
+    for p in `ghc-pkg check $* 2>&1  | grep problems | awk '{print $6}' | sed -e 's/:$//'`
+    do
+        echo unregistering $p; ghc-pkg $* unregister $p
+    done
+}
+
+# remove all installed GHC/cabal packages, leaving ~/.cabal binaries and docs in place.
+# When all else fails, use this to get out of dependency hell and start over.
+function ghc-pkg-reset() {
+    read -p 'erasing all your user ghc and cabal packages - are you sure (y/n) ? ' ans
+    test x$ans == xy && ( \
+        echo 'erasing directories under ~/.ghc'; rm -rf `find ~/.ghc -maxdepth 1 -type d`; \
+        echo 'erasing ~/.cabal/lib'; rm -rf ~/.cabal/lib; \
+        # echo 'erasing ~/.cabal/packages'; rm -rf ~/.cabal/packages; \
+        # echo 'erasing ~/.cabal/share'; rm -rf ~/.cabal/share; \
+        )
+}
+
+alias cabalupgrades="cabal list --installed  | egrep -iv '(synopsis|homepage|license)'"
